@@ -54,4 +54,30 @@ public class Common{
 			}
 		}
 	}
+	public static int maxOf(int[] arr){//配列の最大値を求めるメソッド
+		int max=arr[0];
+		for(int i=1;i<arr.length;i++){
+			if(arr[i]>max){
+				max=arr[i];
+			}
+		}
+		return max;
+	}
+	public static int minOf(int[] arr){//配列の最小値を求めるメソッド
+		int min=arr[0];
+		for(int i=1;i<arr.length;i++){
+			if(arr[i]<min){
+				min=arr[i];
+			}
+		}
+		return min;
+	}
+	public int gcd(int a,int b){//最大子約数を求めるメソッド
+		int mod=a%b;
+		if(mod==0){
+			return b;
+		}else{
+			return gcd(b,mod);
+		}
+	}
 }
