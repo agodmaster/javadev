@@ -1,14 +1,14 @@
 package my.util;
 import java.util.*;
 public class Common{
-	public static void reverse(int[] arr){
+	public static void reverse(int[] arr){//配列を逆順にするメソッド
 		for(int i=0;i<arr.length/2;i++){
 			int temp=arr[i];
 			arr[i] =arr[arr.length-1-i];
 			arr[arr.length-1-i]=temp;
 		}
 	}
-	public static void shuffle(int[] arr){
+	public static void shuffle(int[] arr){//配列をシャッフルするメソッド
 		Random rand=new Random();
 		for(int i=0;i<arr.length-1;i++){
 			int index=rand.nextInt(arr.length-i);
@@ -17,7 +17,7 @@ public class Common{
 			arr[arr.length-1-i]=temp;
 		}
 	}
-	public static void sort(int[] arr){
+	public static void sort(int[] arr){//最小値の順にするメソッド
 		for(int i=0;i<arr.length-1;i++){
 			for(int j=i+1;j<arr.length;j++){
 				if(arr[i]>arr[j]){
@@ -28,7 +28,7 @@ public class Common{
 			}
 		}
 	}
-	public static void sort(int[] arr,boolean isDesc){
+	public static void sort(int[] arr,boolean isDesc){//降順にするメソッド
 		if(!isDesc){
 			sort(arr);
 		}else{
@@ -43,7 +43,7 @@ public class Common{
 			}
 		}
 	}
-	public static void bubbleSort(int[] arr){
+	public static void bubbleSort(int[] arr){//sortと同じだがアルゴリズムが違う（処理が早い）
 		for(int i=0;i<arr.length-1;i++){
 			for(int j=arr.length-1;j>i;j--){
 				if(arr[j]<arr[j-1]){
@@ -79,5 +79,33 @@ public class Common{
 		}else{
 			return gcd(b,mod);
 		}
+	}
+	public static void print(String msg){//msgの改行
+		System.out.println(msg);
+	}
+	public static void print(int msg){
+		System.out.println(msg);
+	}
+	public static void print(double msg){
+		System.out.println(msg);
+	}
+	public static void print(String msg,String delimiter){//何もなければ空白
+		System.out.print(msg+delimiter);
+	}
+	public static int input(String msg){
+		System.out.print(msg);
+		int n=new java.util.Scanner(System.in).nextInt();
+		return n;
+	}
+
+	public static String inputStr(String msg){
+		print(msg,"");
+		String str=new java.util.Scanner(System.in).next();
+		return str;
+	}
+	public static String inputLine(String msg){
+		print(msg,"");
+		String str=new java.util.Scanner(System.in).nextLine();
+		return str;
 	}
 }
