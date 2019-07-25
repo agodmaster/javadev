@@ -54,6 +54,21 @@ public class Common{
 			}
 		}
 	}
+	public static void selectionSort(int[] arr){
+		for(int i=0;i<arr.length-1;i++){
+			int index=i;
+			for(int j=i+1;j<arr.length;j++){
+				if(arr[index]>arr[j]){
+					index=j;
+				}
+			}
+			if(index != i){
+				int temp=arr[i];
+				arr[i]=arr[index];
+				arr[index]=temp;
+			}		
+		}
+	}		
 	public static int maxOf(int[] arr){//配列の最大値を求めるメソッド
 		int max=arr[0];
 		for(int i=1;i<arr.length;i++){
