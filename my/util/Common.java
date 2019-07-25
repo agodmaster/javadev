@@ -72,7 +72,7 @@ public class Common{
 		}
 		return min;
 	}
-	public int gcd(int a,int b){//最大子約数を求めるメソッド
+	public static int gcd(int a,int b){//最大子約数を求めるメソッド
 		int mod=a%b;
 		if(mod==0){
 			return b;
