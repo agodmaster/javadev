@@ -54,6 +54,32 @@ public class Common{
 			}
 		}
 	}
+	public static void selectionSort(int[] arr){
+		for(int i=0;i<arr.length-1;i++){
+			int index=i;
+			for(int j=i+1;j<arr.length;j++){
+				if(arr[index]>arr[j]){
+					index=j;
+				}
+			}
+			if(index != i){
+				int temp=arr[i];
+				arr[i]=arr[index];
+				arr[index]=temp;
+			}		
+		}
+	}		
+	public static void insertionSort(int[] arr){
+		for(int i=1;i<arr.length;i++){
+			int pick=arr[i];
+			int j=i-1;
+			while(j>=0 && arr[j]>pick){
+				arr[j+1]=arr[j];
+				j--;
+			}
+			arr[j+1]=pick;
+		}
+	}
 	public static int maxOf(int[] arr){//配列の最大値を求めるメソッド
 		int max=arr[0];
 		for(int i=1;i<arr.length;i++){
@@ -107,5 +133,12 @@ public class Common{
 		print(msg,"");
 		String str=new java.util.Scanner(System.in).nextLine();
 		return str;
+	}
+	public static int rand(int min,int max){//メモ2から8を受け取った場合
+		Random rand=new Random();
+		/*min=2 max=8*/
+		int n=rand.nextInt(max-min+1)+min;//大きい方から小さい方足して更に＋１
+		return n;
+
 	}
 }
