@@ -106,24 +106,11 @@ public class Common{
 			return gcd(b,mod);
 		}
 	}
-	public static void print(String msg){//msgの改行
-		System.out.println(msg);
+	public static void print(Object msg){
+		System.out.println(msg.toString());
 	}
-	public static void print(int msg){
-		System.out.println(msg);
-	}
-	public static void print(double msg){
-		System.out.println(msg);
-	}
-	public static void print(String msg,String delimiter){//何もなければ空白
-		System.out.print(msg+delimiter);
-	}
-	//引数二個渡すと改行しないデルミターと呼ぶ
-	public static void print(int i,String delimiter){
-		System.out.print(i+delimiter);
-	}
-	public static void print(double d,String delimiter){
-		System.out.print(d+delimiter);
+	public static void print(Object msg,String delimiter){//何もなければ空白
+		System.out.print(msg.toString()+delimiter);
 	}
 	public static int input(String msg){
 		System.out.print(msg);
